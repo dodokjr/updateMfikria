@@ -12,6 +12,7 @@ import
   AiOutlineHistory,
 } from "react-icons/ai";
 import { FaBlog } from "react-icons/fa"
+import { GrProjects } from "react-icons/gr";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -82,7 +83,7 @@ export default function NavBar()
                 href="/project"
                 onClick={() => updateExpanded(false)}
               >
-                <AiOutlineFundProjectionScreen
+                <GrProjects
                   style={{ marginBottom: "2px" }}
                 />{" "}
                 Projects

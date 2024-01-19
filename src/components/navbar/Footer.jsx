@@ -8,7 +8,8 @@ import
   AiFillInstagram,
   AiFillYoutube,
 } from "react-icons/ai";
-import { FaLinkedinIn, FaDiscord, FaSteam } from "react-icons/fa";
+import { FaLinkedinIn, FaDiscord, FaSteam, FaHome, FaUser, FaBlog } from "react-icons/fa";
+import { GrProjects } from "react-icons/gr";
 import Link from "next/link";
 
 export default async function Footer()
@@ -21,9 +22,47 @@ export default async function Footer()
     <>
       <Container fluid className="footer">
         <Row>
+          <Col md="4" className="footer-body">
+            <ul className="footer-icons">
+              <li className="social-icons">
+                <Link
+                  href={"/"}
+                  style={{ color: "white" }}
+                >
+                  <FaHome />
+                </Link>
+              </li>
+              <li className="social-icons">
+                <Link
+                  href={"/about"}
+                  style={{ color: "white" }}
+                >
+                  <FaUser />
+                </Link>
+              </li>
+              <li className="social-icons">
+                <Link
+                  href={"/project"}
+                  style={{ color: "white" }}
+                >
+                  <GrProjects />
+                </Link>
+              </li>
+              <li className="social-icons" >
+                <a
+                  href={"/blog"}
+                  style={{ color: "white" }}
+                >
+                  <FaBlog />
+                </a>
+              </li>
+            </ul>
+          </Col>
+
           <Col md="4" className="footer-copywright">
             <h3>Copyright © {year} Fikria</h3>
           </Col>
+
           <Col md="4" className="footer-body">
             <ul className="footer-icons">
               <li className="social-icons">
