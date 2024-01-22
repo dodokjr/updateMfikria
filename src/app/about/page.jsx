@@ -5,10 +5,13 @@ import Aboutcard from "@/components/about/aboutCard";
 import Toolstack from "@/components/about/toolstack";
 import getMyApi from "@/libs/api-res";
 import Image from "next/image";
+import InstagramFeed from "@/components/about/instagramFeed";
 
 export default async function Page()
 {
   const profile = await getMyApi("/v2/github/dodokjr")
+  const items = await getMyApi("/ig")
+  console.log(items)
   return (
     <Container fluid className="about-section">
       {/* <Particle /> */}
@@ -38,6 +41,13 @@ export default async function Page()
           <div>Github Following {profile.following}</div>
           <div>Github Followers {profile.followers}</div>
         </Row>
+
+        <h1 className="project-heading">
+          Instagram <strong className="purple">Feed </strong>
+        </h1>
+
+        <InstagramFeed/>
+
         {/* Tool And Stack */}
         <h1 className="project-heading">
           Professional <strong className="purple">Skillset </strong>

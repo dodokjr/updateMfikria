@@ -1467,3 +1467,24 @@ th {
       font-size: 1.05rem;
   }
 }
+
+
+/* instagram feed */
+
+.instagram-feed{
+  padding: 16px 16px;
+  color: white !important;
+  background-color: transparent !important;
+  opacity: 0.9 !important;
+  height: 100% !important;
+  transition: 2ms all;
+  -webkit-transition: 2ms  ease-in-out all;
+  -moz-transition: 2ms all;
+  -ms-transition: 2ms all;
+  -o-transition: 2ms all;
+}
+
+.instagram-feed:hover{
+  filter: blur(1.5px);
+  -webkit-filter: blur(1.5px);
+}
