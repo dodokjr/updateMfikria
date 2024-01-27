@@ -10,9 +10,7 @@ import InstagramFeed from "@/components/about/instagramFeed";
 export default async function Page()
 {
   const profile = await getMyApi("/v2/github/dodokjr")
-  const items = await getMyApi("/ig")
-  console.log(items)
-  return (
+    return (
     <Container fluid className="about-section">
       {/* <Particle /> */}
       <Container>
@@ -46,6 +44,9 @@ export default async function Page()
           Instagram <strong className="purple">Feed </strong>
         </h1>
 
+        <div>
+
+        </div>
         <InstagramFeed/>
 
         {/* Tool And Stack */}

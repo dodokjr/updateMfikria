@@ -91,23 +91,14 @@ export default function NavBar()
             </Nav.Item>
 
 
-            <Nav.Item>
-              <Nav.Link  href="/blog" onClick={() => updateExpanded(false)} >
-                <FaBlog style={{ marginBottom: "2px" }} /> Blog
-              </Nav.Link>
-            </Nav.Item>
-
             <Nav.Item className="fork-btn">
               <Button
-                href="https://github.com/dodokjr"
+                href="https://api-mfikria.vercel.app/mediasosial?q=github"
                 target="_blank"
                 className="fork-btn-inner"
               >
                 <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
               </Button>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link href='/updatelist' onClick={() => updateExpanded(false)} title="History And Update Website"><AiOutlineHistory /></Nav.Link>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>

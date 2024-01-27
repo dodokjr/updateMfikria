@@ -9,7 +9,6 @@ import Link from "next/link";
 export default async function InstagramFeed(){
     const api = await fetch("https://api-mfikria.vercel.app/ig")
     const items = await api.json()
-    
     return(
         <Row className="p-2">
                <Col  md={4}>

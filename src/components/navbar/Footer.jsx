@@ -48,14 +48,6 @@ export default async function Footer()
                   <GrProjects />
                 </Link>
               </li>
-              <li className="social-icons" >
-                <a
-                  href={"/blog"}
-                  style={{ color: "white" }}
-                >
-                  <FaBlog />
-                </a>
-              </li>
             </ul>
           </Col>
 
