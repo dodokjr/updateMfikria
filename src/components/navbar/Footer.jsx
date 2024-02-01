@@ -22,34 +22,6 @@ export default async function Footer()
     <>
       <Container fluid className="footer">
         <Row>
-          <Col md="4" className="footer-body">
-            <ul className="footer-icons">
-              <li className="social-icons">
-                <Link
-                  href={"/"}
-                  style={{ color: "white" }}
-                >
-                  <FaHome />
-                </Link>
-              </li>
-              <li className="social-icons">
-                <Link
-                  href={"/about"}
-                  style={{ color: "white" }}
-                >
-                  <FaUser />
-                </Link>
-              </li>
-              <li className="social-icons">
-                <Link
-                  href={"/project"}
-                  style={{ color: "white" }}
-                >
-                  <GrProjects />
-                </Link>
-              </li>
-            </ul>
-          </Col>
 
           <Col md="4" className="footer-copywright">
             <h3>Copyright © {year} Fikria</h3>
