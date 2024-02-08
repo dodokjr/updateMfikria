@@ -8,6 +8,7 @@ import
   AiFillInstagram,
   AiFillYoutube,
 } from "react-icons/ai";
+import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn, FaDiscord, FaSteam, FaHome, FaUser, FaBlog } from "react-icons/fa";
 import { GrProjects } from "react-icons/gr";
 import Link from "next/link";
@@ -87,6 +88,16 @@ export default async function Footer()
                   rel="noopener noreferrer"
                 >
                   <FaSteam />
+                </a>
+              </li>
+              <li className="social-icons">
+                <a
+                  href={items.twitter}
+                  style={{ color: "white" }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaXTwitter />
                 </a>
               </li>
             </ul>

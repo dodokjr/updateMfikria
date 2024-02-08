@@ -2,11 +2,14 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { Card, Alert, Container, Form, Button } from 'react-bootstrap';
+import { set } from 'date-fns';
 
 
 const Contact = () =>
 {
   const [message, setMessage] = useState(false);
+  const [notif, setNotif] = useState(false);
+  const [errNotif, setErrNotif] = useState(false);
   const formRef = useRef();
   const handleSubmit = (e) =>
   {
@@ -22,11 +25,11 @@ const Contact = () =>
       .then(
         (result) =>
         {
-          console.log('Terkirim');
+          setNotif(true)
         },
         (error) =>
         {
-          console.log('Terjadi masalah mohon coba lagi');
+          setErrNotif(true)
         }
       );
 
@@ -63,14 +66,14 @@ const Contact = () =>
             <Button type="submit" variant="light">
               Send Message
             </Button>
-            {message &&
-              <div>
-                <Alert variant="success">
-                  This is a success alert with{' '}
-                  <Alert.Link href="mailto:ffikri604@gmail.com">ffikri604@gmail.com</Alert.Link>. Give it a click if
-                  you like.
+            {notif && 
+            <Alert variant="success">
+                  your message is sent
+                </Alert> || 
+            errNotif && 
+            <Alert variant="danger">
+                  Your message was not sent, please try again
                 </Alert>
-              </div>
             }
           </Form>
         </Container>
