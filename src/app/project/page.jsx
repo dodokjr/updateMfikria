@@ -7,7 +7,9 @@ import ApiMfikria from "../../Assets/Projects/api.png";
 import GithubRepos from "@/components/github-page/githubRepos";
 
 
-export default function Projects(){
+export default async function Projects(){
+  const api = await fetch(`https://api-mfikria.vercel.app/mfikria/`, { cache: 'no-store' })
+  const res = await api.json()
     return (
         <>
           <Container fluid className="project-section">
@@ -19,42 +21,22 @@ export default function Projects(){
                 Here are a few projects I've worked on recently.
               </p>
               <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-                <Col md={4} className="project-card">
-                  <ProjectCard
-                    imgPath={DodokStore}
-                    title="Dodok Store"
-                    description="Store Project with Html Css Javascript"
-                    ghLink="https://github.com/dodokjr/dodok-store"
-                    demoLink="https://dodokvapestore.netlify.app/"
-                  />
+                {res.data.map((r) => {
+                 return(
+                  <>
+                  <Col md={4} className="project-card">
+                      <ProjectCard
+                       imgPath={r.img_url}
+                       title={r.title}
+                       description={r.descriptions}
+                       ghLink={r.url_github}
+                       demoLink={r.url_demo}
+                       hisLink={`/project/h/${r.slug}`}
+                      />
                 </Col>
-                <Col md={4} className="project-card">
-                  <ProjectCard
-                    imgPath={Gabut}
-                    title="Token And Password Random"
-                    description="Project with Html Css Javascript"
-                    ghLink="https://github.com/dodokjr/gabut-1"
-                    demoLink="https://gabut-1.vercel.app/"
-                  />
-                </Col>
-                <Col md={4} className="project-card">
-                  <ProjectCard
-                    imgPath={Mfanimelist}
-                    title="anime List"
-                    description="Project with frontend Reactjs and backend Expressjs api with jikan anime"
-                    ghLink="https://github.com/dodokjr/animeList"
-                    demoLink="https://mfanimelist.vercel.app/"
-                  />
-                </Col>
-                <Col md={4} className="project-card">
-                  <ProjectCard
-                    imgPath={ApiMfikria}
-                    title="official Api By me"
-                    description="Project with Backend Express js"
-                    ghLink="https://github.com/dodokjr/api-mfikria"
-                    demoLink="https://api-mfikria.vercel.app/"
-                  />
-                </Col>
+                  </>
+                 )
+                })}
               </Row>
               <GithubRepos />
             </Container>

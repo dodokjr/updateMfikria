@@ -21,6 +21,9 @@ const nextConfig = {
             },
             {
                 hostname: "scontent-cgk1-2.cdninstagram.com"
+            },
+            {
+                hostname: "api-mfikria.vercel.app"
             }
         ]
     }

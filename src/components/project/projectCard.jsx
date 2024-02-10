@@ -3,9 +3,10 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { CgWebsite } from "react-icons/cg";
 import { BsGithub } from "react-icons/bs";
+import { GrFormNextLink } from "react-icons/gr";
 import Image from "next/image";
 
-function ProjectCards(props) {
+async function ProjectCards(props) {
   return (
     <Card className="project-card-view">
       <Image className="card-img-top" src={props.imgPath} alt="card-img"  width={400} height={300} />
@@ -34,6 +35,10 @@ function ProjectCards(props) {
             {"Demo"}
           </Button>
         )}
+        <Button variant="primary" href={props.hisLink} style={{ marginTop: "10px" }}>
+          <GrFormNextLink /> &nbsp;
+          {props.hisBlog ? "Blog" : "Status"}
+        </Button>
       </div>
     </Card>
   );

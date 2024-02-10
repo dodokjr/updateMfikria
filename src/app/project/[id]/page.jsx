@@ -21,7 +21,7 @@ const Page = async({params: {id}}) => {
             <p><FaCodeBranch/> {items.default_branch}</p>
             </div>
             <Row className="p-3 text-white">
-        <Col><Image src={items.owner.avatar_url} alt="..." width={300} height={300}/></Col>
+        <Col><Image src={items.owner?.avatar_url} alt="..." width={300} height={300}/></Col>
         <Col sm>
         <Stack gap={3}>
             <div className="p-2 text-center">Clone Github</div>
@@ -35,7 +35,7 @@ const Page = async({params: {id}}) => {
         <div className="p-2 text-center">Details</div>
         {
             urlW ? <div className="p-2">
-            <Button variant="link" href={items.homepage} >{items.homepage}</Button>
+            <Button variant="link" href={items.homepage} >{items?.homepage}</Button>
             </div> : null
         }
             {
