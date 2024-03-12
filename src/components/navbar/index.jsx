@@ -15,11 +15,14 @@ import { FaBlog } from "react-icons/fa"
 import { GrProjects } from "react-icons/gr";
 import Link from "next/link";
 import Image from "next/image";
+import { motion, Variants } from "framer-motion";
+
 
 export default function NavBar()
 {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
+  const [isOpen , setIsOpen] = useState(false)
 
   function scrollHandler()
   {
@@ -37,12 +40,21 @@ export default function NavBar()
     window.addEventListener("scroll", scrollHandler);
   }, [])
 
+  const Variants = {
+      open: {
+        opacity: 1,
+        y: 0,
+        transition: { type: "spring", stiffness: 300, damping: 24 }
+      },
+      closed: { opacity: 0, y: 20, transition: { duration: 0.2 } }
+    }
 
   return (
     <Navbar
       expanded={expand}
       fixed="top"
       expand="md"
+      
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>

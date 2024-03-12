@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/avatar.svg";
 import Tilt from "react-parallax-tilt";
@@ -13,11 +13,15 @@ import
 import { FaLinkedinIn } from "react-icons/fa";
 import Contact from "../contact/Contact";
 import Image from "next/image";
+import { useInView } from "framer-motion";
 
 export default function Home()
 {
 
   const [count, setCount] = useState(0);
+  const ref = useRef(null)
+  const isInView = useInView(ref, {once : true})
+
   useEffect(() =>
   {
     var pageView = sessionStorage.getItem("pageView");
@@ -31,15 +35,24 @@ export default function Home()
     sessionStorage.setItem("pageView", pageView);
     setCount(pageView);
   }, []);
+
   return (
     <Container fluid className="home-about-section" id="about">
       <Container>
         <Row>
-          <Col md={8} className="home-about-description">
-            <h1 style={{ fontSize: "2.6em" }}>
+          <Col md={8} className="home-about-description" ref={ref}>
+            <h1 style={{ 
+            fontSize: "2.6em",
+            transform: isInView ? "none": "translateX(-200px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"  
+              }}>
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
-            <p className="home-about-body">
+            <p className="home-about-body" style={{ 
+            transform: isInView ? "none": "translateX(200px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"}}>
               <br />
               <br />I am fluent in classics like
               <i>
@@ -71,9 +84,13 @@ export default function Home()
               </i>
             </p>
           </Col>
-          <Col md={4} className="myAvtar">
+          <Col md={4} className="myAvtar" ref={ref}>
             <Tilt>
-              <Image src={myImg} className="img-fluid" alt="avatar" />
+              <Image src={myImg} className="img-fluid" alt="avatar" style={{ 
+                transform: isInView ? "none" : "translateX(200px)",
+                opacity: isInView ? 1 : 0,
+                transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+                }} />
             </Tilt>
           </Col>
         </Row>
@@ -81,7 +98,7 @@ export default function Home()
           <div className="blue">View In Website <AiFillEye /> {count} Live</div>
         </Row>
         <Row>
-          <Col md={12} className="home-about-social">
+          <Col md={12} className="home-about-social" >
             <h1>CONTACT ME !!!</h1>
             <p>
               Feel free to <span className="purple">connect </span>with me
