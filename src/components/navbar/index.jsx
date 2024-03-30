@@ -11,10 +11,10 @@ import
   AiOutlineUser,
   AiOutlineHistory,
 } from "react-icons/ai";
-import { FaBlog } from "react-icons/fa"
 import { GrProjects } from "react-icons/gr";
 import Link from "next/link";
 import Image from "next/image";
+import { FaBlog } from "react-icons/fa6";
 import { motion, Variants } from "framer-motion";
 
 
@@ -99,6 +99,18 @@ export default function NavBar()
                   style={{ marginBottom: "2px" }}
                 />{" "}
                 Projects
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                href="/blog"
+                onClick={() => updateExpanded(false)}
+              >
+                <FaBlog
+                  style={{ marginBottom: "2px" }}
+                />{" "}
+                Blog
               </Nav.Link>
             </Nav.Item>
 

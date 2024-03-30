@@ -54,9 +54,9 @@ export default function Home()
             opacity: isInView ? 1 : 0,
             transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"}}>
               <br />
-              <br />I am fluent in classics like
+              <br />I am fluent in programming
               <i>
-                <b className="blue"> Html, Javascript and Css. </b>
+                <b className="blue"> HTML, Javascript, Typescript, Python, C++ and CSS. </b>
               </i>
               <br />
               <br />
@@ -70,19 +70,8 @@ export default function Home()
               </i>
               <br />
               <br />
-              Whenever possible, I also apply my passion for developing products
-              with <b className="blue">Node.js</b> and
-              <i>
-                <b className="blue">
-                  {" "}
-                  Modern Javascript Library and Frameworks
-                </b>
-              </i>
-              &nbsp; like
-              <i>
-                <b className="blue"> React.js and Next.js</b>
-              </i>
-            </p>
+              From the fields above, I also like editing and playing games on the mobile phone
+              </p>
           </Col>
           <Col md={4} className="myAvtar" ref={ref}>
             <Tilt>

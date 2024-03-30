@@ -8,7 +8,7 @@ import GithubRepos from "@/components/github-page/githubRepos";
 
 
 export default async function Projects(){
-  const api = await fetch(`https://api-mfikria.vercel.app/mfikria/`, { cache: 'no-store' })
+  const api = await fetch(`https://api-mfikria.vercel.app/mfikria/p/`, { cache: 'no-store' })
   const res = await api.json()
     return (
         <>

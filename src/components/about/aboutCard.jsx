@@ -10,14 +10,10 @@ export default function AboutCard()
   const isInView = useInView(ref, {once : true})
   return (
     <Card className="quote-card-view" ref={ref}>
-      <div style={{  
-                transform: isInView ? "none": "translateX(-200px)",
-                opacity: isInView ? 1 : 0,
-                transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
-              }}>
+      <div>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hi Everyone, I am <span className="blue">Muhammad Fikri Ardiyansah </span>
+            Hi Everyone, I am <b>Muhammad Fikri Ardiyansah </b>
             from <span className="purple"> Semarang, Indonesia</span>
             <br />I am a junior Devloper
             <br />

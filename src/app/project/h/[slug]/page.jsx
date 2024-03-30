@@ -2,7 +2,7 @@ import { redirect } from "next/dist/server/api-utils";
 import { Container, Row, Col, Table } from "react-bootstrap";
 
 export default async function page({params: {slug}}) {
-    const api = await fetch(`https://api-mfikria.vercel.app/mfikria/${slug}`, { cache: 'no-store' })
+    const api = await fetch(`https://api-mfikria.vercel.app/mfikria/p/${slug}`, { cache: 'no-store' })
     const ress = await api.json()
     if(!ress) ress.statusCode = 404;
     return(

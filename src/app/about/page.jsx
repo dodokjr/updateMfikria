@@ -9,9 +9,9 @@ import InstagramFeed from "@/components/about/instagramFeed";
 
 export default async function Page()
 {
-  const api = await fetch(`https://api-mfikria.vercel.app/ig`, { cache: 'no-store' })
+  const api = await fetch(`https://api-mfikria.vercel.app/mfikria/c/ig`, { cache: 'no-store' })
   const igFeed = await api.json()
-  console.log(igFeed)
+  
   const profile = await getMyApi("/v2/github/dodokjr")
     return (
     <Container fluid className="about-section">

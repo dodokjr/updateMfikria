@@ -33,11 +33,15 @@ export default function RootLayout({ children })
         <title>MFikriA | Portofolio</title>
       </Head>
       <body className={`${inter.className} bg-dark`}>
+        <div id='mfikria'>
         <NavBar />
+        <main>
         {children}
+        </main>
         <Footer />
         <CrispWithNoSSR />
         <Analytics />
+        </div>
       </body>
     </html>
   )
