@@ -13,6 +13,8 @@ const igFeed = [
   {id: 1, url_Profile: "https://www.instagram.com/p/C1ONvPlB-R2LiNZQipCNo7z_7jvC3czfLeAWG40/", url_Image: "https://api-mfikria.vercel.app/public/assets/ig/ig_2.webp" },
   {id: 2, url_Profile: "https://www.instagram.com/p/CzlWvXShA2KGPENz8cu9JhZcjIJtd_esdgC7W40/", url_Image: "https://api-mfikria.vercel.app/public/assets/ig/ig_3.webp" },
   {id: 3, url_Profile: "https://www.instagram.com/p/CwkQeMUh5FBplsorvsJIsDlvyUJO7hZe4bvYR80/", url_Image: "https://api-mfikria.vercel.app/public/assets/ig/ig_4.webp" },
+  {id: 4, url_Profile: "https://www.instagram.com/p/C5yUzhmBGCr/", url_Image: "https://api-mfikria.vercel.app/public/assets/ig/ig_5.webp" },
+  {id: 5, url_Profile: "https://www.instagram.com/p/C5yUzhmBGCr/", url_Image: "https://api-mfikria.vercel.app/public/assets/ig/ig_6.webp" },
 ]
 
 export default function InstagramFeed(){
